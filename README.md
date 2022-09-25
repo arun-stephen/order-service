@@ -41,3 +41,7 @@ If above steps are done then we are good to proceed with next step.
   - Finally review the build pipeline changes and click on `Create pipeline`
 
 ### Validating changes deploy to AWS 
+- Once the pipeline was created then it will automatically start the build and deployment also we cna check the logs for the deployment
+- The build pipeline will start once the code was committed to the GitHub repository
+- Once the deployment was success then we can check the API for the latest changes
+- Finally, the API can be accessed via elastic beanstalk url like `{beanstackurl}/orders` or `{beanstalkurl}/orders/sorted` url
