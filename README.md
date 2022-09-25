@@ -21,6 +21,10 @@ If above steps are done then we are good to proceed with next step.
   - Finally, verify all our code changes are sync with GitHub remote repository
 
 ### Configuring the CodeBuild and Deployment to AWS
+- Configure Elastic Beanstalk configuration
+  - Login to `AWS console` and search for `Elastic Beanstalk` to create the application environment
+  - Click on `Create Application` and give the name as `order-service` and select the platform as `Java`
+  - Click on `Create environment` to create environment for order-service application
 - Configure Code Build pipeline configuration
   - Login to `AWS console` and search for `Code Pipeline` and select to configure the code pipeline
   - Given the new code pipeline name and leave all other values as default. If required then change the same
@@ -30,6 +34,10 @@ If above steps are done then we are good to proceed with next step.
     - Create the new project for build pipeline by giving the name of the project as `orderService` and `os` is `Amazon Linux2` or `Ubuntu` and `Runtime` as `standard`
     - Select the latest image and select the Build Spec as `Use a build-spec file` (as we already created inside the project)
     - Then click on `Continue to CodePipeline`
-- Configure Elastic Beanstalk configuration
+  - Add Deploy Stage configuration
+    - Select the `Deploy Provider` as `AWS Elastic Beanstalk` 
+    - Select the application name and environment name (which created in above stage)
+      - Click on Next` button
+  - Finally review the build pipeline changes and click on `Create pipeline`
 
 ### Validating changes deploy to AWS 
